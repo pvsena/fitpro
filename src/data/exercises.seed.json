@@ -1,0 +1,402 @@
+[
+  {
+    "name": "Supino Reto com Barra",
+    "name_en": "Barbell Bench Press",
+    "muscle_group": "peito",
+    "secondary_muscles": ["triceps", "ombros"],
+    "equipment": "academia_completa",
+    "difficulty": "intermediario",
+    "instructions": "Deite no banco, segure a barra na largura dos ombros, desça até o peito e empurre para cima.",
+    "youtube_url": "https://youtube.com/watch?v=example1"
+  },
+  {
+    "name": "Supino Inclinado com Halteres",
+    "name_en": "Incline Dumbbell Press",
+    "muscle_group": "peito",
+    "secondary_muscles": ["triceps", "ombros"],
+    "equipment": "halteres",
+    "difficulty": "intermediario",
+    "instructions": "Ajuste o banco a 30-45 graus, pressione os halteres para cima.",
+    "youtube_url": "https://youtube.com/watch?v=example2"
+  },
+  {
+    "name": "Flexão de Braço",
+    "name_en": "Push-up",
+    "muscle_group": "peito",
+    "secondary_muscles": ["triceps", "ombros", "core"],
+    "equipment": "casa",
+    "difficulty": "iniciante",
+    "instructions": "Mãos na largura dos ombros, corpo reto, desça até quase tocar o chão.",
+    "youtube_url": "https://youtube.com/watch?v=example3"
+  },
+  {
+    "name": "Crucifixo com Halteres",
+    "name_en": "Dumbbell Fly",
+    "muscle_group": "peito",
+    "secondary_muscles": ["ombros"],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "instructions": "Deite no banco, abra os braços em arco mantendo leve flexão nos cotovelos.",
+    "youtube_url": "https://youtube.com/watch?v=example4"
+  },
+  {
+    "name": "Puxada Frontal",
+    "name_en": "Lat Pulldown",
+    "muscle_group": "costas",
+    "secondary_muscles": ["biceps", "antebracos"],
+    "equipment": "academia_completa",
+    "difficulty": "iniciante",
+    "instructions": "Segure a barra larga, puxe até a altura do queixo, controlando a volta.",
+    "youtube_url": "https://youtube.com/watch?v=example5"
+  },
+  {
+    "name": "Remada Curvada com Barra",
+    "name_en": "Barbell Bent Over Row",
+    "muscle_group": "costas",
+    "secondary_muscles": ["biceps", "lombar"],
+    "equipment": "academia_completa",
+    "difficulty": "intermediario",
+    "instructions": "Incline o tronco a 45 graus, puxe a barra até o abdômen.",
+    "youtube_url": "https://youtube.com/watch?v=example6"
+  },
+  {
+    "name": "Remada Unilateral com Halter",
+    "name_en": "Single Arm Dumbbell Row",
+    "muscle_group": "costas",
+    "secondary_muscles": ["biceps"],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "instructions": "Apoie uma mão e joelho no banco, puxe o halter até a cintura.",
+    "youtube_url": "https://youtube.com/watch?v=example7"
+  },
+  {
+    "name": "Remada com Elástico",
+    "name_en": "Resistance Band Row",
+    "muscle_group": "costas",
+    "secondary_muscles": ["biceps"],
+    "equipment": "elasticos",
+    "difficulty": "iniciante",
+    "instructions": "Sente com pernas estendidas, elástico nos pés, puxe até o abdômen.",
+    "youtube_url": "https://youtube.com/watch?v=example8"
+  },
+  {
+    "name": "Desenvolvimento com Halteres",
+    "name_en": "Dumbbell Shoulder Press",
+    "muscle_group": "ombros",
+    "secondary_muscles": ["triceps"],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "instructions": "Sentado ou em pé, pressione os halteres acima da cabeça.",
+    "youtube_url": "https://youtube.com/watch?v=example9"
+  },
+  {
+    "name": "Elevação Lateral",
+    "name_en": "Lateral Raise",
+    "muscle_group": "ombros",
+    "secondary_muscles": [],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "instructions": "Eleve os halteres lateralmente até a altura dos ombros.",
+    "youtube_url": "https://youtube.com/watch?v=example10"
+  },
+  {
+    "name": "Elevação Frontal",
+    "name_en": "Front Raise",
+    "muscle_group": "ombros",
+    "secondary_muscles": ["peito"],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "instructions": "Eleve os halteres à frente até a altura dos ombros.",
+    "youtube_url": "https://youtube.com/watch?v=example11"
+  },
+  {
+    "name": "Desenvolvimento com Elástico",
+    "name_en": "Resistance Band Shoulder Press",
+    "muscle_group": "ombros",
+    "secondary_muscles": ["triceps"],
+    "equipment": "elasticos",
+    "difficulty": "iniciante",
+    "instructions": "Pise no elástico, pressione acima da cabeça.",
+    "youtube_url": "https://youtube.com/watch?v=example12"
+  },
+  {
+    "name": "Rosca Direta com Barra",
+    "name_en": "Barbell Curl",
+    "muscle_group": "biceps",
+    "secondary_muscles": ["antebracos"],
+    "equipment": "academia_completa",
+    "difficulty": "iniciante",
+    "instructions": "Segure a barra, flexione os cotovelos mantendo os braços fixos.",
+    "youtube_url": "https://youtube.com/watch?v=example13"
+  },
+  {
+    "name": "Rosca Alternada com Halteres",
+    "name_en": "Alternating Dumbbell Curl",
+    "muscle_group": "biceps",
+    "secondary_muscles": ["antebracos"],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "instructions": "Alterne a flexão dos braços, rotacionando o punho.",
+    "youtube_url": "https://youtube.com/watch?v=example14"
+  },
+  {
+    "name": "Rosca Martelo",
+    "name_en": "Hammer Curl",
+    "muscle_group": "biceps",
+    "secondary_muscles": ["antebracos"],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "instructions": "Flexione os braços mantendo os punhos neutros (palmas voltadas uma para outra).",
+    "youtube_url": "https://youtube.com/watch?v=example15"
+  },
+  {
+    "name": "Tríceps Pulley",
+    "name_en": "Tricep Pushdown",
+    "muscle_group": "triceps",
+    "secondary_muscles": [],
+    "equipment": "academia_completa",
+    "difficulty": "iniciante",
+    "instructions": "Segure a barra ou corda, estenda os cotovelos empurrando para baixo.",
+    "youtube_url": "https://youtube.com/watch?v=example16"
+  },
+  {
+    "name": "Tríceps Testa com Halteres",
+    "name_en": "Dumbbell Skull Crusher",
+    "muscle_group": "triceps",
+    "secondary_muscles": [],
+    "equipment": "halteres",
+    "difficulty": "intermediario",
+    "instructions": "Deite no banco, flexione os cotovelos levando os halteres à testa, depois estenda.",
+    "youtube_url": "https://youtube.com/watch?v=example17"
+  },
+  {
+    "name": "Tríceps Francês",
+    "name_en": "Overhead Tricep Extension",
+    "muscle_group": "triceps",
+    "secondary_muscles": [],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "instructions": "Segure um halter acima da cabeça, flexione e estenda os cotovelos.",
+    "youtube_url": "https://youtube.com/watch?v=example18"
+  },
+  {
+    "name": "Agachamento Livre",
+    "name_en": "Barbell Squat",
+    "muscle_group": "quadriceps",
+    "secondary_muscles": ["gluteos", "posteriores"],
+    "equipment": "academia_completa",
+    "difficulty": "intermediario",
+    "instructions": "Barra apoiada nas costas, agache até as coxas ficarem paralelas ao solo.",
+    "youtube_url": "https://youtube.com/watch?v=example19"
+  },
+  {
+    "name": "Agachamento com Halteres",
+    "name_en": "Goblet Squat",
+    "muscle_group": "quadriceps",
+    "secondary_muscles": ["gluteos", "posteriores"],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "instructions": "Segure um halter junto ao peito, agache controladamente.",
+    "youtube_url": "https://youtube.com/watch?v=example20"
+  },
+  {
+    "name": "Agachamento Livre (Peso Corporal)",
+    "name_en": "Bodyweight Squat",
+    "muscle_group": "quadriceps",
+    "secondary_muscles": ["gluteos", "posteriores"],
+    "equipment": "casa",
+    "difficulty": "iniciante",
+    "instructions": "Pés na largura dos ombros, agache mantendo o peito erguido.",
+    "youtube_url": "https://youtube.com/watch?v=example21"
+  },
+  {
+    "name": "Leg Press 45°",
+    "name_en": "Leg Press",
+    "muscle_group": "quadriceps",
+    "secondary_muscles": ["gluteos", "posteriores"],
+    "equipment": "academia_completa",
+    "difficulty": "iniciante",
+    "instructions": "Posicione os pés na plataforma, empurre sem travar os joelhos.",
+    "youtube_url": "https://youtube.com/watch?v=example22"
+  },
+  {
+    "name": "Cadeira Extensora",
+    "name_en": "Leg Extension",
+    "muscle_group": "quadriceps",
+    "secondary_muscles": [],
+    "equipment": "academia_completa",
+    "difficulty": "iniciante",
+    "instructions": "Sente na máquina, estenda as pernas controladamente.",
+    "youtube_url": "https://youtube.com/watch?v=example23"
+  },
+  {
+    "name": "Avanço (Lunge)",
+    "name_en": "Lunge",
+    "muscle_group": "quadriceps",
+    "secondary_muscles": ["gluteos", "posteriores"],
+    "equipment": "casa",
+    "difficulty": "iniciante",
+    "instructions": "Dê um passo à frente, flexione ambos os joelhos a 90 graus.",
+    "youtube_url": "https://youtube.com/watch?v=example24"
+  },
+  {
+    "name": "Stiff com Barra",
+    "name_en": "Romanian Deadlift",
+    "muscle_group": "posteriores",
+    "secondary_muscles": ["gluteos", "lombar"],
+    "equipment": "academia_completa",
+    "difficulty": "intermediario",
+    "instructions": "Pernas levemente flexionadas, desça a barra mantendo as costas retas.",
+    "youtube_url": "https://youtube.com/watch?v=example25"
+  },
+  {
+    "name": "Stiff com Halteres",
+    "name_en": "Dumbbell Romanian Deadlift",
+    "muscle_group": "posteriores",
+    "secondary_muscles": ["gluteos", "lombar"],
+    "equipment": "halteres",
+    "difficulty": "iniciante",
+    "instructions": "Mesmo movimento do stiff, usando halteres.",
+    "youtube_url": "https://youtube.com/watch?v=example26"
+  },
+  {
+    "name": "Mesa Flexora",
+    "name_en": "Lying Leg Curl",
+    "muscle_group": "posteriores",
+    "secondary_muscles": [],
+    "equipment": "academia_completa",
+    "difficulty": "iniciante",
+    "instructions": "Deite de bruços na máquina, flexione as pernas em direção aos glúteos.",
+    "youtube_url": "https://youtube.com/watch?v=example27"
+  },
+  {
+    "name": "Elevação Pélvica (Hip Thrust)",
+    "name_en": "Hip Thrust",
+    "muscle_group": "gluteos",
+    "secondary_muscles": ["posteriores"],
+    "equipment": "academia_completa",
+    "difficulty": "intermediario",
+    "instructions": "Apoie as costas no banco, barra no quadril, eleve o quadril contraindo os glúteos.",
+    "youtube_url": "https://youtube.com/watch?v=example28"
+  },
+  {
+    "name": "Elevação Pélvica no Solo",
+    "name_en": "Glute Bridge",
+    "muscle_group": "gluteos",
+    "secondary_muscles": ["posteriores"],
+    "equipment": "casa",
+    "difficulty": "iniciante",
+    "instructions": "Deite de costas, pés no chão, eleve o quadril contraindo os glúteos.",
+    "youtube_url": "https://youtube.com/watch?v=example29"
+  },
+  {
+    "name": "Panturrilha em Pé",
+    "name_en": "Standing Calf Raise",
+    "muscle_group": "panturrilhas",
+    "secondary_muscles": [],
+    "equipment": "academia_completa",
+    "difficulty": "iniciante",
+    "instructions": "Em pé na máquina, eleve os calcanhares o máximo possível.",
+    "youtube_url": "https://youtube.com/watch?v=example30"
+  },
+  {
+    "name": "Panturrilha Sentado",
+    "name_en": "Seated Calf Raise",
+    "muscle_group": "panturrilhas",
+    "secondary_muscles": [],
+    "equipment": "academia_completa",
+    "difficulty": "iniciante",
+    "instructions": "Sente na máquina, eleve os calcanhares.",
+    "youtube_url": "https://youtube.com/watch?v=example31"
+  },
+  {
+    "name": "Panturrilha em Pé (Peso Corporal)",
+    "name_en": "Bodyweight Calf Raise",
+    "muscle_group": "panturrilhas",
+    "secondary_muscles": [],
+    "equipment": "casa",
+    "difficulty": "iniciante",
+    "instructions": "Em pé, eleve os calcanhares, pode apoiar na parede para equilíbrio.",
+    "youtube_url": "https://youtube.com/watch?v=example32"
+  },
+  {
+    "name": "Abdominal Crunch",
+    "name_en": "Crunch",
+    "muscle_group": "abdomen",
+    "secondary_muscles": [],
+    "equipment": "casa",
+    "difficulty": "iniciante",
+    "instructions": "Deite de costas, mãos atrás da cabeça, eleve os ombros do chão.",
+    "youtube_url": "https://youtube.com/watch?v=example33"
+  },
+  {
+    "name": "Prancha",
+    "name_en": "Plank",
+    "muscle_group": "abdomen",
+    "secondary_muscles": ["lombar"],
+    "equipment": "casa",
+    "difficulty": "iniciante",
+    "instructions": "Apoie-se nos antebraços e pontas dos pés, mantenha o corpo reto.",
+    "youtube_url": "https://youtube.com/watch?v=example34"
+  },
+  {
+    "name": "Abdominal Bicicleta",
+    "name_en": "Bicycle Crunch",
+    "muscle_group": "abdomen",
+    "secondary_muscles": [],
+    "equipment": "casa",
+    "difficulty": "iniciante",
+    "instructions": "Deite de costas, simule pedalar levando cotovelo ao joelho oposto.",
+    "youtube_url": "https://youtube.com/watch?v=example35"
+  },
+  {
+    "name": "Elevação de Pernas",
+    "name_en": "Leg Raise",
+    "muscle_group": "abdomen",
+    "secondary_muscles": [],
+    "equipment": "casa",
+    "difficulty": "intermediario",
+    "instructions": "Deite de costas, eleve as pernas estendidas até 90 graus.",
+    "youtube_url": "https://youtube.com/watch?v=example36"
+  },
+  {
+    "name": "Abdominal na Máquina",
+    "name_en": "Machine Crunch",
+    "muscle_group": "abdomen",
+    "secondary_muscles": [],
+    "equipment": "academia_completa",
+    "difficulty": "iniciante",
+    "instructions": "Ajuste a máquina, flexione o tronco contraindo o abdômen.",
+    "youtube_url": "https://youtube.com/watch?v=example37"
+  },
+  {
+    "name": "Prancha Lateral",
+    "name_en": "Side Plank",
+    "muscle_group": "abdomen",
+    "secondary_muscles": ["obliquos"],
+    "equipment": "casa",
+    "difficulty": "intermediario",
+    "instructions": "Apoie-se em um antebraço, corpo lateral, quadril elevado.",
+    "youtube_url": "https://youtube.com/watch?v=example38"
+  },
+  {
+    "name": "Deadlift (Levantamento Terra)",
+    "name_en": "Deadlift",
+    "muscle_group": "costas",
+    "secondary_muscles": ["gluteos", "posteriores", "quadriceps", "antebracos"],
+    "equipment": "academia_completa",
+    "difficulty": "avancado",
+    "instructions": "Pés na largura do quadril, segure a barra, levante mantendo as costas retas.",
+    "youtube_url": "https://youtube.com/watch?v=example39"
+  },
+  {
+    "name": "Barra Fixa (Pull-up)",
+    "name_en": "Pull-up",
+    "muscle_group": "costas",
+    "secondary_muscles": ["biceps"],
+    "equipment": "academia_completa",
+    "difficulty": "avancado",
+    "instructions": "Pendure-se na barra, puxe o corpo até o queixo passar da barra.",
+    "youtube_url": "https://youtube.com/watch?v=example40"
+  }
+]
