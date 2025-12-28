@@ -32,8 +32,8 @@ function ExerciseCard({ exercise, index }: { exercise: PlanExercise; index: numb
             <span className="text-sm font-bold text-primary">{index + 1}</span>
           </div>
           <div className="flex-1 min-w-0">
-            <h4 className="font-medium text-sm">{exercise.name}</h4>
-            <div className="flex items-center gap-3 mt-1 text-xs text-muted-foreground">
+            <h4 className="font-medium text-sm md:text-base">{exercise.name}</h4>
+            <div className="flex items-center gap-3 mt-1 text-xs md:text-sm text-muted-foreground">
               <span className="flex items-center gap-1">
                 <Repeat className="w-3 h-3" />
                 {exercise.sets}x{exercise.reps}
@@ -57,7 +57,7 @@ function ExerciseCard({ exercise, index }: { exercise: PlanExercise; index: numb
       </div>
       {expanded && exercise.notes && (
         <div className="mt-3 ml-11">
-          <p className="text-xs text-muted-foreground bg-background/50 p-3 rounded-lg">
+          <p className="text-xs md:text-sm text-muted-foreground bg-background/50 p-3 rounded-lg">
             {exercise.notes}
           </p>
         </div>
@@ -89,14 +89,14 @@ function DaySection({ day, isActive, onToggle }: { day: PlanDay; isActive: boole
     <div className="card-elevated overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full p-4 flex items-center justify-between hover:bg-secondary/50 transition-colors"
+        className="w-full p-4 md:p-5 flex items-center justify-between hover:bg-secondary/50 transition-colors"
       >
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-            <span className="font-bold text-primary-foreground">{day.day_number}</span>
+        <div className="flex items-center gap-3 md:gap-4">
+          <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary flex items-center justify-center">
+            <span className="font-bold text-primary-foreground md:text-lg">{day.day_number}</span>
           </div>
           <div className="text-left">
-            <h3 className="font-semibold text-sm">{day.name}</h3>
+            <h3 className="font-semibold text-sm md:text-base">{day.name}</h3>
             <div className="flex items-center gap-2 mt-0.5">
               <span className={cn("text-xs px-2 py-0.5 rounded-full", focusColors[day.focus] || "bg-secondary text-muted-foreground")}>
                 {focusLabels[day.focus] || day.focus}
@@ -115,7 +115,7 @@ function DaySection({ day, isActive, onToggle }: { day: PlanDay; isActive: boole
       </button>
 
       {isActive && (
-        <div className="px-4 pb-4 space-y-2">
+        <div className="px-4 md:px-5 pb-4 md:pb-5 space-y-2 md:space-y-3">
           {day.exercises.map((exercise, index) => (
             <ExerciseCard key={index} exercise={exercise} index={index} />
           ))}
@@ -144,59 +144,61 @@ export function PlanViewer({ planData, planName, planDescription, createdAt }: P
   };
 
   return (
-    <div className="space-y-6 py-4">
+    <div className="space-y-6 md:space-y-8 py-4">
       {/* Plan Header */}
       <div>
-        <h1 className="text-xl font-bold">{planName}</h1>
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold">{planName}</h1>
         {planDescription && (
-          <p className="text-sm text-muted-foreground mt-1">{planDescription}</p>
+          <p className="text-sm md:text-base text-muted-foreground mt-1">{planDescription}</p>
         )}
       </div>
 
       {/* Plan Info Pills */}
       <div className="flex flex-wrap gap-2">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/20 text-primary text-xs font-medium">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/20 text-primary text-xs md:text-sm font-medium">
           <Target className="w-3.5 h-3.5" />
           {splitLabels[planData.split_type] || planData.split_type}
         </span>
-        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary text-xs font-medium">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary text-xs md:text-sm font-medium">
           <Calendar className="w-3.5 h-3.5" />
           {planData.weeks} semanas
         </span>
-        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary text-xs font-medium">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary text-xs md:text-sm font-medium">
           {planData.days.length} treinos
         </span>
       </div>
 
       {planData.notes && (
         <div className="p-4 rounded-xl bg-secondary/50 border border-border/50">
-          <p className="text-sm text-muted-foreground">{planData.notes}</p>
+          <p className="text-sm md:text-base text-muted-foreground">{planData.notes}</p>
         </div>
       )}
 
-      {/* Days List */}
-      <div className="space-y-3">
-        <h2 className="font-semibold text-sm text-muted-foreground uppercase tracking-wide">
+      {/* Days List - Grid on desktop */}
+      <div>
+        <h2 className="font-semibold text-sm text-muted-foreground uppercase tracking-wide mb-3">
           Dias de Treino
         </h2>
-        {planData.days.map((day) => (
-          <DaySection
-            key={day.day_number}
-            day={day}
-            isActive={activeDays.includes(day.day_number)}
-            onToggle={() => toggleDay(day.day_number)}
-          />
-        ))}
+        <div className="grid md:grid-cols-2 gap-3 md:gap-4">
+          {planData.days.map((day) => (
+            <DaySection
+              key={day.day_number}
+              day={day}
+              isActive={activeDays.includes(day.day_number)}
+              onToggle={() => toggleDay(day.day_number)}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Actions */}
-      <div className="pt-4 space-y-3">
+      <div className="pt-4 max-w-xs">
         <GeneratePlanButton variant="secondary" label="Gerar Novo Plano" />
       </div>
 
       {/* Metadata */}
       {createdAt && (
-        <div className="text-center text-xs text-muted-foreground pt-4">
+        <div className="text-xs md:text-sm text-muted-foreground pt-4">
           Criado em{" "}
           {new Date(createdAt).toLocaleDateString("pt-BR", {
             day: "2-digit",

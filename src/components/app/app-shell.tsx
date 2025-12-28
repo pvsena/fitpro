@@ -43,13 +43,63 @@ export function AppShell({ children }: AppShellProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Main content area with bottom padding for nav */}
-      <main className="pb-safe">
-        {children}
+      {/* Desktop Sidebar */}
+      <aside className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0 bg-card border-r border-border">
+        {/* Logo */}
+        <div className="flex items-center gap-2 px-6 py-5 border-b border-border">
+          <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+            <span className="text-primary-foreground font-bold text-xl">F</span>
+          </div>
+          <span className="font-bold text-xl">FitPro</span>
+        </div>
+
+        {/* Navigation */}
+        <nav className="flex-1 px-4 py-6 space-y-2">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href ||
+              (item.href !== "/dashboard" && pathname.startsWith(item.href));
+            const Icon = item.icon;
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "flex items-center gap-3 px-4 py-3 rounded-xl transition-colors",
+                  isActive
+                    ? "bg-primary/20 text-primary"
+                    : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                )}
+              >
+                <Icon className="w-5 h-5" />
+                <span className="font-medium">{item.label}</span>
+                {item.isMain && (
+                  <span className="ml-auto px-2 py-0.5 rounded-full bg-primary/20 text-primary text-xs font-medium">
+                    Novo
+                  </span>
+                )}
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* Footer */}
+        <div className="px-6 py-4 border-t border-border">
+          <p className="text-xs text-muted-foreground">
+            © {new Date().getFullYear()} FitPro
+          </p>
+        </div>
+      </aside>
+
+      {/* Main content area */}
+      <main className="md:pl-64">
+        <div className="pb-20 md:pb-0">
+          {children}
+        </div>
       </main>
 
-      {/* Bottom Navigation */}
-      <nav className="fixed bottom-0 left-0 right-0 z-50 bg-card border-t border-border safe-bottom">
+      {/* Mobile Bottom Navigation */}
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-card border-t border-border safe-bottom">
         <div className="flex items-center justify-around h-16 max-w-lg mx-auto px-2">
           {navItems.map((item) => {
             const isActive = pathname === item.href ||
