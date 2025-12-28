@@ -1,11 +1,9 @@
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { createClient, getUser } from "@/lib/supabase/server";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { AppHeader } from "@/components/app/app-header";
 import { GeneratePlanButton } from "@/components/plan/generate-plan-button";
-import { LogoutButton } from "@/components/logout-button";
+import { Target, Dumbbell, Calendar, ChevronRight, ClipboardList } from "lucide-react";
 import type { WorkoutPlan } from "@/types/database";
 
 export default async function HistoryPage() {
@@ -39,106 +37,89 @@ export default async function HistoryPage() {
   };
 
   return (
-    <div className="min-h-screen bg-muted/30">
-      {/* Header */}
-      <header className="bg-background border-b sticky top-0 z-10">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <Link href="/dashboard" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">F</span>
-              </div>
-              <span className="font-bold text-xl">FitPro</span>
-            </Link>
-          </div>
-          <nav className="flex items-center gap-4">
-            <Link href="/dashboard">
-              <Button variant="ghost" size="sm">Dashboard</Button>
-            </Link>
-            <Link href="/waitlist">
-              <Button variant="ghost" size="sm">Premium</Button>
-            </Link>
-            <LogoutButton />
-          </nav>
-        </div>
-      </header>
+    <div className="min-h-screen bg-background">
+      <AppHeader title="Histórico" showBack backHref="/dashboard" />
 
-      <main className="container mx-auto px-4 py-8 max-w-4xl">
-        {/* Breadcrumb */}
-        <div className="mb-6">
-          <nav className="text-sm text-muted-foreground">
-            <Link href="/dashboard" className="hover:text-foreground">Dashboard</Link>
-            <span className="mx-2">/</span>
-            <span className="text-foreground">Histórico</span>
-          </nav>
-        </div>
-
+      <div className="px-4 py-4 max-w-lg mx-auto">
         {/* Header */}
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex items-center justify-between mb-6">
           <div>
-            <h1 className="text-2xl font-bold">Histórico de Planos</h1>
-            <p className="text-muted-foreground">
+            <h1 className="text-xl font-bold">Seus Planos</h1>
+            <p className="text-sm text-muted-foreground">
               {plans?.length || 0} plano(s) gerado(s)
             </p>
-          </div>
-          <div className="w-48">
-            <GeneratePlanButton />
           </div>
         </div>
 
         {/* Plans List */}
         {plans && plans.length > 0 ? (
-          <div className="space-y-4">
+          <div className="space-y-3">
             {plans.map((plan) => (
-              <Card key={plan.id} className="hover:shadow-md transition-shadow">
-                <CardHeader className="pb-2">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-lg">{plan.name}</CardTitle>
-                      <CardDescription>{plan.description}</CardDescription>
+              <Link key={plan.id} href={`/plan/${plan.id}`}>
+                <div className="card-elevated-hover p-4">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        <h3 className="font-semibold text-sm truncate">{plan.name}</h3>
+                        {plan.is_active && (
+                          <span className="px-2 py-0.5 rounded-full bg-primary/20 text-primary text-xs font-medium flex-shrink-0">
+                            Ativo
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-xs text-muted-foreground mt-1 line-clamp-1">
+                        {plan.description}
+                      </p>
                     </div>
-                    {plan.is_active && <Badge variant="secondary">Ativo</Badge>}
+                    <ChevronRight className="w-5 h-5 text-muted-foreground flex-shrink-0 ml-2" />
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <Badge variant="outline">{goalLabels[plan.goal]}</Badge>
-                    <Badge variant="outline">{plan.training_days_per_week}x/semana</Badge>
-                    <Badge variant="outline">{equipmentLabels[plan.equipment]}</Badge>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-secondary text-xs">
+                      <Target className="w-3 h-3" />
+                      {goalLabels[plan.goal]}
+                    </span>
+                    <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-secondary text-xs">
+                      <Dumbbell className="w-3 h-3" />
+                      {equipmentLabels[plan.equipment]}
+                    </span>
+                    <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-secondary text-xs">
+                      <Calendar className="w-3 h-3" />
+                      {plan.training_days_per_week}x/sem
+                    </span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">
+                  <div className="mt-3 pt-3 border-t border-border/50">
+                    <span className="text-xs text-muted-foreground">
                       {new Date(plan.created_at).toLocaleDateString("pt-BR", {
                         day: "2-digit",
                         month: "short",
                         year: "numeric",
                       })}
                     </span>
-                    <Link href={`/plan/${plan.id}`}>
-                      <Button variant="outline" size="sm">
-                        Ver Plano
-                      </Button>
-                    </Link>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </Link>
             ))}
           </div>
         ) : (
-          <Card>
-            <CardContent className="py-12 text-center">
-              <div className="text-4xl mb-4">📋</div>
-              <h3 className="font-semibold text-lg mb-2">Nenhum plano ainda</h3>
-              <p className="text-muted-foreground mb-4">
-                Você ainda não gerou nenhum plano de treino.
-              </p>
-              <div className="max-w-xs mx-auto">
-                <GeneratePlanButton size="lg" />
-              </div>
-            </CardContent>
-          </Card>
+          <div className="card-elevated p-8 text-center">
+            <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
+              <ClipboardList className="w-8 h-8 text-primary" />
+            </div>
+            <h3 className="font-semibold mb-2">Nenhum plano ainda</h3>
+            <p className="text-sm text-muted-foreground mb-6">
+              Você ainda não gerou nenhum plano de treino.
+            </p>
+            <GeneratePlanButton />
+          </div>
         )}
-      </main>
+
+        {/* Generate New Plan */}
+        {plans && plans.length > 0 && (
+          <div className="mt-6">
+            <GeneratePlanButton variant="secondary" label="Gerar Novo Plano" />
+          </div>
+        )}
+      </div>
     </div>
   );
 }

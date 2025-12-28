@@ -3,8 +3,21 @@
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
+import { LogOut } from "lucide-react";
 
-export function LogoutButton() {
+interface LogoutButtonProps {
+  variant?: "default" | "ghost" | "outline" | "secondary" | "destructive" | "link";
+  size?: "default" | "sm" | "lg" | "icon";
+  className?: string;
+  showIcon?: boolean;
+}
+
+export function LogoutButton({
+  variant = "ghost",
+  size = "sm",
+  className,
+  showIcon = true
+}: LogoutButtonProps) {
   const router = useRouter();
 
   const handleLogout = async () => {
@@ -15,7 +28,8 @@ export function LogoutButton() {
   };
 
   return (
-    <Button variant="ghost" size="sm" onClick={handleLogout}>
+    <Button variant={variant} size={size} onClick={handleLogout} className={className}>
+      {showIcon && <LogOut className="w-4 h-4 mr-2" />}
       Sair
     </Button>
   );
